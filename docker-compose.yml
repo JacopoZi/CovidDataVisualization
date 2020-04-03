@@ -22,3 +22,14 @@ services:
     restart: unless-stopped
     hostname: "grafana"
     container_name: "grafana"
+  ScriptContainer:
+    image: "script"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      'NAME': "script"
+    hostname: "script"
+    container_name: "script"
+    volumes:
+      - "./scripts:/scripts"

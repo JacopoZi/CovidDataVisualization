@@ -62,7 +62,7 @@ class CsvExporter:
 
             for row in csv_reader:
                 # Modify the date in unix format
-                row[0] = row[0].split(" ")[0]
+                row[0] = row[0].split("T")[0]
                 date_list = row[0].split("-")
                 timestamp = datetime.datetime(int(date_list[0]), int(date_list[1]), int(date_list[2]))
                 timestamp = int(time.mktime(timestamp.timetuple()))
